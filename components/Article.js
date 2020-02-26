@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { View, ScrollView, Image, Text, TouchableOpacity } from 'react-native';
 
-import {cart, calculateCart} from "../cart";
+import { connect } from 'react-redux';
+import { addArticleAction, removeArticleAction } from '../Store/Actions/cart';
 
-const Article = ({fruit}) => {
+const Article = ({ fruit, addArticle, removeArticle }) => {
 	const [value, onChangeValue] = React.useState(0);
-
 	return(
 		<View style={styles.article}>
 			<View style={[styles.round, {backgroundColor: fruit.color}]} />
@@ -16,11 +16,21 @@ const Article = ({fruit}) => {
 			</View>
 			<View style={styles.counter}>
 				<TouchableOpacity style={[styles.square, {backgroundColor: value === 0 ? "#74B9FF55" : "#74B9FF"}]} 
-				onPress={() => {value > 0 ? onChangeValue(value - 1) : ""}}>
+				onPress={() => {
+					if(value > 0) {
+						onChangeValue(value - 1);	
+						const valueToSend = value - 1;
+						removeArticle({...fruit, value: valueToSend});
+					}
+				}}>
 					<Text style={styles.count}>-</Text>
 				</TouchableOpacity>
 				<Text style={styles.count}>{value}</Text>
-				<TouchableOpacity style={styles.square} onPress={() => {onChangeValue(value + 1)}}>
+				<TouchableOpacity style={styles.square} onPress={() => {
+					onChangeValue(value + 1);
+					const valueToSend = value + 1;
+					addArticle({...fruit, value: valueToSend});
+				}}>
 					<Text style={styles.count}>+</Text>
 				</TouchableOpacity>
 			</View>
@@ -80,8 +90,14 @@ const styles = {
 		width: 30,
 		height: 30,
 		borderRadius: 5,
-		backgroundColor: "#79C3FF",
+		backgroundColor: "#74B9FF",
 	}
 }
 
-export default Article;
+
+const mapDispatchToProps = dispatch => ({
+	addArticle: payload => dispatch(addArticleAction(payload)),
+	removeArticle: payload => dispatch(removeArticleAction(payload)),
+});
+
+export default connect(null, mapDispatchToProps)(Article);

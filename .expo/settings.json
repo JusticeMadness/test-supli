@@ -1,8 +1,7 @@
 {
+  "urlRandomness": "pb-agq",
   "hostType": "tunnel",
   "lanType": "ip",
   "dev": true,
-  "minify": false,
-  "urlRandomness": "jt-k9d",
-  "https": false
+  "minify": false
 }

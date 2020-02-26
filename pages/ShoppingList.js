@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Button, View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import Articles from "../components/Articles";
-
-import { cart } from "../cart";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Cart = ({navigation}) => {
+import { connect } from 'react-redux';
+import Articles from "../components/Articles";
+
+const ShoppingList = ({ navigation, cart }) => {
+
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Shopping Bag</Text>
@@ -15,28 +16,27 @@ const Cart = ({navigation}) => {
 				<View style={styles.address}>
 					<Icon style={styles.icon} name="truck" size={24} color='grey' />
 					<Text style={styles.addressText}>{cart.shippingAddress}</Text>
-					<TouchableOpacity  style={styles.change}>
+					<TouchableOpacity onPress={() => console.log(cart)} style={styles.change}>
 						<Text>CHANGE</Text>
 					</TouchableOpacity>
 				</View>
 				<View style={styles.line} />
 				<Text style={styles.subtitle}>Price details</Text>
 				<View style={styles.detail}>
-					<View style={styles.address}>
-						<Text style={styles.articleName}>cabbage</Text>
-						<View style={styles.dashed} />
-						<Text>24€</Text>
-					</View>
-					<View style={styles.address}>
-						<Text style={styles.articleName}>oranges</Text>
-						<View style={styles.dashed} />
-						<Text>45€</Text>
-					</View>
+					{cart.articles.map((article, i) => {
+						return(
+							<View key={i} style={styles.address}>
+								<Text style={styles.articleName}>{article.name}</Text>
+								<View style={styles.dashed} />
+								<Text>{article.value} x {article.price}€</Text>
+							</View>
+						);
+					})}
 				</View>
 				<View style={styles.microline} />
 				<View style={styles.totalInfos}>
 					<Text style={styles.totalText}>total</Text>
-					<Text style={styles.total}>69€</Text>
+					<Text style={styles.total}>{cart.total}€</Text>
 				</View>
 			</ScrollView>
 		</View>
@@ -123,4 +123,7 @@ const styles = {
 	}
 }
 
-export default Cart;
+
+const mapStateToProps = ({ cart }) => ({ cart });
+
+export default connect(mapStateToProps)(ShoppingList);
