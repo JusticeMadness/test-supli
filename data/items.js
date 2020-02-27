@@ -1,4 +1,4 @@
-export const fruits = [
+export const items = [
 	{
 		id: 1,
 		name: "Bananas",

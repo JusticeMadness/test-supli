@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image, View, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, Image, View, Text, TouchableOpacity, Dimensions } from 'react-native';
 
 import InputField from "../components/InputField";
 
@@ -8,8 +8,8 @@ const Login = () => {
 		<View style={styles.container}>
 			<Image style={styles.logo} source={require("../assets/icon.png")} />
 			<View style={styles.main}>
-				<InputField icon="envelope" placeholder={"Email Address"} /> 
-				<InputField icon="lock" placeholder={"Password"} />
+				<InputField icon="envelope" placeholder="Email Address" /> 
+				<InputField icon="lock" placeholder="Password" password />
 				<TouchableOpacity style={styles.button}>
 					<Text style={styles.buttonText}>LOGIN</Text>
 				</TouchableOpacity>
@@ -28,7 +28,7 @@ const Login = () => {
 						<Text>Facebook</Text>
 					</TouchableOpacity> 
 				</View> 
-				<TouchableOpacity>
+				<TouchableOpacity style={styles.termsContainer}>
 					<Text style={styles.terms}>Terms & Conditions</Text>				
 				</TouchableOpacity> 
 			</View>
@@ -54,9 +54,9 @@ const styles = {
 		marginBottom: 20,
 	},
 	main: {
+		flex: 1,
+		alignSelf: "stretch",
 		padding: 20,
-		flex:1,
-		alignSelf:'stretch',
 		shadowColor: "#000",
 		shadowOffset: {
 			width: 0,
@@ -94,15 +94,17 @@ const styles = {
 	},
 	linksContainer: {
 		flexDirection: "row",
+		flexGrow: 1,
 		justifyContent: "space-between",
 	},
 	linkButton: {
-		backgroundColor: "#FFF",
-		borderRadius: 10,
 		flexDirection: "row",
 		alignItems: "center",
+		height: 55,
 		width: "45%",
 		padding: 15,
+		backgroundColor: "#FFF",
+		borderRadius: 10,
 	},
 	google: {
 		width: 38,
@@ -114,8 +116,10 @@ const styles = {
 		height: 50,
 		marginRight: 5,
 	},
+	termsContainer: {
+		width: "100%",
+	},
 	terms: {
-		marginTop: "12%",
 		alignSelf: "center",
 		color: "grey",
 		textDecorationLine: "underline",

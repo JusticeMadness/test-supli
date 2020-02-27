@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import Store from './Store/configureStore';
 
 import ShoppingList from "./pages/ShoppingList";
+import Categories from "./pages/Categories";
 import Login from "./pages/Login";
 
 const Tab = createBottomTabNavigator();
@@ -23,13 +24,16 @@ const App = () => {
 								let iconName;
 								switch(route.name) {
 									case "ShoppingList":
-									iconName = "shopping-cart";
+										iconName = "shopping-cart";
 									break;
 									case "Login":
-									iconName = "user-circle";
+										iconName = "user-circle";
+									break;
+									case "Categories":
+										iconName = "list";
 									break;
 									default: 
-									return;
+										return;
 								}
 								return <Icon name={iconName} size={24} />;
 							},
@@ -41,6 +45,7 @@ const App = () => {
 			        >
 						<Tab.Screen name="ShoppingList" component={ShoppingList} />
 						<Tab.Screen name="Login" component={Login} />
+						<Tab.Screen name="Categories" component={Categories} />
 					</Tab.Navigator>
 			</NavigationContainer>
 		</Provider>

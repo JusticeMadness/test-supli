@@ -3,13 +3,14 @@ import { View, TextInput } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const InputField = ({icon, placeholder}) => {
+const InputField = ({icon, placeholder, password}) => {
 	const [value, onChangeValue] = React.useState("");
-
 	return(
 		<View style={styles.container}>
 			<Icon style={styles.icon} name={icon} size={24} color='grey' />
-			<TextInput style={styles.input} onChangeText={value => onChangeValue(value)} value={value} placeholder={placeholder}/>
+			<TextInput style={styles.input} onChangeText={value => onChangeValue(value)} 
+				value={value} placeholder={placeholder} secureTextEntry={password}
+			/>
 		</View>
 	);
 } 

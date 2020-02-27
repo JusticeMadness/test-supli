@@ -3,14 +3,14 @@ import { View, ScrollView, Image, Text } from 'react-native';
 
 import Article from "./Article";
 
-import { fruits } from "../data/fruits";
+import { items } from "../data/items";
 
 const Articles = () => {
 	const [value, onChangeValue] = React.useState(1);
 
 	return(
 		<ScrollView style={styles.container}>
-			{fruits.map((fruit, i) => {
+			{items.map((fruit, i) => {
 				return(
 					<Article fruit={fruit} key={i} />
 				);

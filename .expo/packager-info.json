@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 22908,
-  "expoServerNgrokUrl": "https://pb-agq.anonymous.test-supli.exp.direct",
-  "packagerNgrokUrl": "https://packager.pb-agq.anonymous.test-supli.exp.direct",
-  "ngrokPid": 18248
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }

@@ -40,7 +40,7 @@ export function cart(state = initialState, action) {
                     return {
                         ...state,
                         articles: state.articles.map((article, j) => {
-                                return i === j ? {...article, value: action.article.value} : article
+                            return i === j ? {...article, value: action.article.value} : article
                         }),
                         total: state.total - action.article.price,
                     };
