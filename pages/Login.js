@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, Image, View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { ScrollView, Image, View, Text, TouchableOpacity } from 'react-native';
 
 import InputField from "../components/InputField";
 

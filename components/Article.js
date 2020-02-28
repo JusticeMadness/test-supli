@@ -46,15 +46,15 @@ const styles = {
 	},
 	round: {
 		position: "absolute",
-		left: -35,
+		left: -10,
 		top: 20,
-		width: 100,
-		height: 100,
+		width: 64,
+		height: 64,
 		borderRadius: 9999,
 	},
 	image: {
-		width: 116,
-		height: 116,
+		width: 80,
+		height: 80,
 	},
 	article: {
 		flexDirection: "row",
@@ -70,7 +70,7 @@ const styles = {
 		color: "grey",
 	},
 	articlePrice: {
-		fontSize: 26,
+		fontSize: 20,
 	},
 	counter: {
 		position: "absolute",

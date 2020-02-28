@@ -16,13 +16,13 @@ const ShoppingList = ({ navigation, cart }) => {
 				<View style={styles.address}>
 					<Icon style={styles.icon} name="truck" size={24} color='grey' />
 					<Text style={styles.addressText}>{cart.shippingAddress}</Text>
-					<TouchableOpacity onPress={() => console.log(cart)} style={styles.change}>
+					<TouchableOpacity onPress={() => {return}} style={styles.change}>
 						<Text>CHANGE</Text>
 					</TouchableOpacity>
 				</View>
 				<View style={styles.line} />
-				<Text style={styles.subtitle}>Price details</Text>
 				<View style={styles.detail}>
+					<Text style={styles.subtitle}>Price details</Text>
 					{cart.articles.map((article, i) => {
 						return(
 							<View key={i} style={styles.address}>
@@ -59,6 +59,7 @@ const styles = {
 	},
 	cartInfos: {
 		paddingTop: 10,
+		height: 256,
 	},
 	address: {
 		padding: 10,
