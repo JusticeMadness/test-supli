@@ -1,34 +1,49 @@
 import * as React from 'react';
-import { ScrollView, Image, View, Text, TouchableOpacity } from 'react-native';
+import { 
+	ScrollView, Image, 
+	TouchableOpacity, Text, 
+	View, 
+} from 'react-native';
+import { mainStyles as _ } from "../assets/mainStyles";
 
 import InputField from "../components/InputField";
 
 const Login = () => {
 	return (
-		<View style={styles.container}>
+		<View style={_.mainContainer}>
 			<Image style={styles.logo} source={require("../assets/icon.png")} />
+
 			<View style={styles.main}>
 				<InputField icon="envelope" placeholder="Email Address" /> 
 				<InputField icon="lock" placeholder="Password" password />
 				<TouchableOpacity style={styles.button}>
 					<Text style={styles.buttonText}>LOGIN</Text>
 				</TouchableOpacity>
+
 				<View style={styles.barredTextContainer}> 
-					<View style={styles.bar} />
+					<View style={_.line} />
 					<Text style={styles.barredText}>Or</Text>
-					<View style={styles.bar} /> 
+					<View style={_.line} />
 				</View> 
+
 				<View style={styles.linksContainer}>
 					<TouchableOpacity style={styles.linkButton}>
-						<Image style={styles.google} source={require("../assets/google.png")} />
+						<Image 
+							style={styles.google} 
+							source={require("../assets/google.png")} 
+						/>
 						<Text>Google</Text>
 					</TouchableOpacity> 
 					<TouchableOpacity style={styles.linkButton}>
-						<Image style={styles.facebook} source={require("../assets/fb.png")} />
+						<Image 
+							style={styles.facebook} 
+							source={require("../assets/fb.png")} 
+						/>
 						<Text>Facebook</Text>
 					</TouchableOpacity> 
 				</View> 
-				<TouchableOpacity style={styles.termsContainer}>
+				
+				<TouchableOpacity>
 					<Text style={styles.terms}>Terms & Conditions</Text>				
 				</TouchableOpacity> 
 			</View>
@@ -37,15 +52,6 @@ const Login = () => {
 }
 
 const styles = {
-	container: { 
-		flex: 1,
-		paddingTop: 30,
-		backgroundColor: "#FFF",
-	},
-	title: {
-		fontSize: 26,
-		marginLeft: 10,
-	},
 	logo: {
 		alignSelf: "center",
 		width: 64,
@@ -64,7 +70,6 @@ const styles = {
 		},
 		shadowOpacity: 0.30,
 		shadowRadius: 5.00,
-
 		elevation: 8,
 		backgroundColor: "#F4F4F4",
 	},
@@ -86,11 +91,6 @@ const styles = {
 	barredText: {
 		marginHorizontal: 20,
 		color: "grey",
-	},
-	bar: {
-		flex: 1,
-		backgroundColor: "grey",
-		height: 1,
 	},
 	linksContainer: {
 		flexDirection: "row",
@@ -115,9 +115,6 @@ const styles = {
 		width: 50,
 		height: 50,
 		marginRight: 5,
-	},
-	termsContainer: {
-		width: "100%",
 	},
 	terms: {
 		alignSelf: "center",

@@ -2,7 +2,7 @@ export const items = [
 	{
 		id: 1,
 		name: "Bananas",
-		categorie: "Fruits",
+		category: "Fruits",
 		price: 1,
 		color: "#FF69",
 		uri: "https://purepng.com/public/uploads/medium/purepng.com-bananasbananabananasyellow-bananabotanically-a-berryedible-fruitherbaceousgenus-musa-1701527189249vgoep.png",
@@ -10,7 +10,7 @@ export const items = [
 	{
 		id: 2,
 		name: "Tomatoes",
-		categorie: "Fruits",
+		category: "Fruits",
 		price: 1,
 		color: "#F669",
 		uri: "http://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c239.png",
@@ -18,7 +18,7 @@ export const items = [
 	{
 		id: 3,
 		name: "Oranges",
-		categorie: "Fruits",
+		category: "Fruits",
 		price: 3,
 		color: "#FD69",
 		uri: "https://purepng.com/public/uploads/medium/purepng.com-orangesorangefruitfoodtastydeliciousorangecolor-331522582635xfbvy.png",
@@ -26,7 +26,7 @@ export const items = [
 	{
 		id: 4,
 		name: "Beef",
-		categorie: "Meat",
+		category: "Meat",
 		price: 15,
 		color: "#F149",
 		uri: "https://i.pinimg.com/originals/67/84/3d/67843d2a042e9315d487d5013a894653.png",
@@ -34,7 +34,7 @@ export const items = [
 	{
 		id: 5,
 		name: "Pork",
-		categorie: "Meat",
+		category: "Meat",
 		price: 10,
 		color: "#F669",
 		uri: "https://pngimg.com/uploads/pork/pork_PNG19.png",
@@ -42,7 +42,7 @@ export const items = [
 	{
 		id: 6,
 		name: "Chicken",
-		categorie: "Meat",
+		category: "Meat",
 		price: 5,
 		color: "#FDC9",
 		uri: "https://www.freepngimg.com/thumb/meat/35172-8-chicken-meat-image.png",
@@ -50,7 +50,7 @@ export const items = [
 	{
 		id: 7,
 		name: "Cabbage",
-		categorie: "Vegetables",
+		category: "Vegetables",
 		price: 2,
 		color: "#F7F9",
 		uri: "https://www.stickpng.com/assets/thumbs/580b57fcd9996e24bc43c202.png",
@@ -58,7 +58,7 @@ export const items = [
 	{
 		id: 8,
 		name: "Salad",
-		categorie: "Vegetables",
+		category: "Vegetables",
 		price: 2,
 		color: "#BFB9",
 		uri: "https://www.grupolucas.com/cms/wp-content/uploads/2018/03/file-09-03-2018-14-12-44-qheRtnjX.png",
@@ -66,7 +66,7 @@ export const items = [
 	{
 		id: 9,
 		name: "Radish",
-		categorie: "Vegetables",
+		category: "Vegetables",
 		price: 2,
 		color: "#DDD9",
 		uri: "https://lh3.googleusercontent.com/proxy/VbHoGt4T5QOVgoCFLWXP7OK3Z674ZXten2mL15vAjWrp0sdv8_O94UBzQA9AOhM_nawhmGjjIKe5diE5dWhUa9fOlPYSizJRl1NZ89LOOrU2Lx5_NkTFLb4Ia8p8vEDRxVu2",
@@ -74,7 +74,7 @@ export const items = [
 	{
 		id: 10,
 		name: "Butter",
-		categorie: "Dairy",
+		category: "Dairy",
 		price: 5,
 		color: "#FF99",
 		uri: "https://lh3.googleusercontent.com/proxy/WquVOMWt3st4pse_f0m8XpdpozK3msCjJlClv27hnp8fqH-rHdvHzP1t_PgDdW--fCSbLW2rPmHgsKrcJIaxmpFATgxVPheICzGSNFeEdZxTawB1i4hQHc161-GGbU1Tc7w",
@@ -82,7 +82,7 @@ export const items = [
 	{
 		id: 11,
 		name: "Milk",
-		categorie: "Dairy",
+		category: "Dairy",
 		price: 2,
 		color: "#FFF9",
 		uri: "https://webstockreview.net/images/clipart-milk-full-cup-12.png",
@@ -90,7 +90,7 @@ export const items = [
 	{
 		id: 12,
 		name: "Cheese",
-		categorie: "Dairy",
+		category: "Dairy",
 		price: 20,
 		color: "#FF99",
 		uri: "https://www.stickpng.com/assets/images/580b57fbd9996e24bc43c0cf.png",

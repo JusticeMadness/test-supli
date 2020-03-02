@@ -1,20 +1,27 @@
 import * as React from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { 
+	View, Text, 
+	ScrollView, TouchableOpacity, 
+} from 'react-native';
 
 import { connect } from 'react-redux';
 
-import Categorie from "../components/Categorie";
+import Category from "../components/Category";
 import { categories } from "../data/categories";
 
 const Categories = ({ navigation, cart }) => {
-
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Categories</Text>
 			<View style={styles.main}>
-				{categories.map((categorie, i) => {
+				{categories.map((category, i) => {
 				return(
-					<Categorie uri={categorie.uri} name={categorie.name} key={i} />
+					<Category 
+						navigation={navigation} 
+						uri={category.uri} 
+						name={category.name} 
+						key={i} 
+					/>
 				);
 			})}
 			</View>
@@ -40,7 +47,6 @@ const styles = {
 		marginLeft: 10,
 	},
 }
-
 
 const mapStateToProps = ({ cart }) => ({ cart });
 

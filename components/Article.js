@@ -1,42 +1,57 @@
 import * as React from 'react';
-import { View, ScrollView, Image, Text, TouchableOpacity } from 'react-native';
+import { 
+	View, ScrollView, 
+	Image, Text, 
+	TouchableOpacity,
+} from 'react-native';
 
 import { connect } from 'react-redux';
 import { addArticleAction, removeArticleAction } from '../Store/Actions/cart';
 
-const Article = ({ fruit, addArticle, removeArticle }) => {
+const Article = ({ item, addArticle, removeArticle }) => {
 	const [value, onChangeValue] = React.useState(0);
-	return(
+	return (
 		<View style={styles.article}>
-			<View style={[styles.round, {backgroundColor: fruit.color}]} />
-			<Image style={styles.image} resizeMode="contain" source={{uri: fruit.uri}} />
+			<View style={[styles.round, {backgroundColor: item.color}]} />
+			<Image 
+				style={styles.image} 
+				resizeMode="contain" 
+				source={{uri: item.uri}} 
+			/>
 			<View style={styles.infos}>
-				<Text style={styles.articleName}>{fruit.name}</Text>
-				<Text style={styles.articlePrice}>{fruit.price}€</Text>
+				<Text style={styles.articleName}>{item.name}</Text>
+				<Text style={styles.articlePrice}>{item.price}€</Text>
 			</View>
 			<View style={styles.counter}>
-				<TouchableOpacity style={[styles.square, {backgroundColor: value === 0 ? "#74B9FF55" : "#74B9FF"}]} 
-				onPress={() => {
-					if(value > 0) {
-						onChangeValue(value - 1);	
-						const valueToSend = value - 1;
-						removeArticle({...fruit, value: valueToSend});
-					}
-				}}>
+				<TouchableOpacity 
+					style={[styles.square, {
+						backgroundColor: value === 0 ? "#74B9FF55" : "#74B9FF"
+					}]} 
+					onPress={() => {
+						if(value > 0) {
+							onChangeValue(value - 1);	
+							const valueToSend = value - 1;
+							removeArticle({...item, value: valueToSend});
+						}
+					}}
+				>
 					<Text style={styles.count}>-</Text>
 				</TouchableOpacity>
 				<Text style={styles.count}>{value}</Text>
-				<TouchableOpacity style={styles.square} onPress={() => {
-					onChangeValue(value + 1);
-					const valueToSend = value + 1;
-					addArticle({...fruit, value: valueToSend});
-				}}>
+				<TouchableOpacity 
+					style={styles.square} 
+					onPress={() => {
+						onChangeValue(value + 1);
+						const valueToSend = value + 1;
+						addArticle({...item, value: valueToSend});
+					}}
+				>
 					<Text style={styles.count}>+</Text>
 				</TouchableOpacity>
 			</View>
-	</View>
+		</View>
 	);
-} 
+};
 
 const styles = {
 	container: {
@@ -60,7 +75,7 @@ const styles = {
 		flexDirection: "row",
 		marginBottom: 20,
 		padding: 20,
-		backgroundColor: "#CDD4",
+		backgroundColor: "#CDD7",
 	},
 	infos: {
 		marginLeft: 20,

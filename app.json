@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Blank Template",
+    "name": "Test Supli",
     "slug": "Supli",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -13,9 +13,9 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/icon.png",
+      "resizeMode": "center",
+      "backgroundColor": "#74B9FF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

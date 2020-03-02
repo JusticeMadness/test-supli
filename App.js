@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -8,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Provider } from 'react-redux';
 import Store from './Store/configureStore';
 
-import ShoppingList from "./pages/ShoppingList";
+import Shop from "./pages/Shop";
 import Categories from "./pages/Categories";
 import Login from "./pages/Login";
 
@@ -18,38 +17,44 @@ const App = () => {
 	return (
 		<Provider store={Store}>
 			<NavigationContainer>
-					<Tab.Navigator
-						screenOptions={({ route }) => ({
-							tabBarIcon: ({ focused, color, size }) => {
-								let iconName;
-								switch(route.name) {
-									case "ShoppingList":
-										iconName = "shopping-cart";
-									break;
-									case "Login":
-										iconName = "user-circle";
-									break;
-									case "Categories":
-										iconName = "list";
-									break;
-									default: 
-										return;
-								}
-								return <Icon name={iconName} size={24} />;
-							},
-						})}
-						tabBarOptions={{
-							activeTintColor: '#74B9FF',
-							inactiveTintColor: 'gray',
-				        }}
-			        >
-						<Tab.Screen name="ShoppingList" component={ShoppingList} />
-						<Tab.Screen name="Login" component={Login} />
-						<Tab.Screen name="Categories" component={Categories} />
-					</Tab.Navigator>
+				<Tab.Navigator
+					screenOptions={({ route }) => ({
+						tabBarIcon: ({ focused, color, size }) => {
+							let iconName;
+							switch(route.name) {
+								case "Shop":
+									iconName = "shopping-cart";
+								break;
+								case "Categories":
+									iconName = "list";
+								break;
+								case "Login":
+									iconName = "user-circle";
+								break;
+								default: 
+									return;
+							}
+							return (
+								<Icon 
+									name={iconName} 
+									color={focused ? '#74B9FF' : 'grey'} 
+									size={24} 
+								/>
+							);
+						},
+					})}
+					tabBarOptions={{
+						activeTintColor: "#74B9FF",
+						inactiveTintColor: "gray",
+			        }}
+		        >
+					<Tab.Screen name="Shop" component={Shop} />
+					<Tab.Screen name="Categories" component={Categories} />
+					<Tab.Screen name="Login" component={Login} />
+				</Tab.Navigator>
 			</NavigationContainer>
 		</Provider>
 	);
-}
+};
 
 export default App;
